@@ -10,11 +10,11 @@
   <a href="https://api.hackerone.com/"><img src="https://img.shields.io/badge/HackerOne-API%20v1-red.svg" alt="HackerOne API"></a>
   <a href="#-dataset-overview"><img src="https://img.shields.io/badge/Disclosed%20Reports-9%2C950-brightgreen.svg" alt="Disclosed Reports"></a>
   <a href="#-dataset-overview"><img src="https://img.shields.io/badge/Total%20Bounties-%243.26M%2B-gold.svg" alt="Total Bounty Paid"></a>
-  <a href="#-curated-agent-skills-collections"><img src="https://img.shields.io/badge/AI%20Skills-16%20Active%20Skills-brightgreen.svg" alt="Curated Skills"></a>
+  <a href="#-curated-agent-skills-collections"><img src="https://img.shields.io/badge/AI%20Skills-121%20Active%20Skills-brightgreen.svg" alt="Curated Skills"></a>
   <a href="#-zero-external-dependencies"><img src="https://img.shields.io/badge/Dependencies-0%20External%20(Stdlib)-brightgreen.svg" alt="Zero Dependencies"></a>
 </p>
 
-An enterprise-grade repository combining **9,950+ real-world disclosed HackerOne bug bounty reports** ($3.26M+ in bounties paid) with two curated, modular, dynamic collections of **Universal AI Agent Skills** (`Awesome-Claude-Code-Agent-Skills/` & `Personal-Claude-Code-Agent-Skills/`) built for next-generation AI coding assistants: **Claude Code**, **Gemini CLI**, **Google Antigravity**, **ChatGPT / Codex CLI**, and **Cursor**.
+An enterprise-grade repository combining **9,950+ real-world disclosed HackerOne bug bounty reports** ($3.26M+ in bounties paid) with two curated, modular collections comprising **121 Universal AI Agent Skills** (`Awesome-Claude-Code-Agent-Skills/` [118 skills across 10 specialized domains] & `Personal-Claude-Code-Agent-Skills/` [3 deep HackerOne vulnerability intelligence skills]) built for next-generation AI coding assistants: **Claude Code**, **Gemini CLI**, **Google Antigravity**, **ChatGPT / Codex CLI**, and **Cursor**.
 
 ---
 
@@ -58,23 +58,196 @@ The repository includes an offline intelligence dataset of **`9,950` disclosed v
 
 ### 1. Awesome Claude Code Skills (`Awesome-Claude-Code-Agent-Skills/`)
 
-A curated collection of **13 open-source offensive security, reconnaissance, and bug bounty skills**:
+A curated, production-ready collection of **118 specialized offensive security, penetration testing, reverse engineering, and AI agent skills** organized across 10 security domains:
 
-| Skill Directory | Focus Area | Description | Primary Invocations & Tools |
-| :--- | :--- | :--- | :--- |
-| [`403Bypass`](Awesome-Claude-Code-Agent-Skills/403Bypass/) | Access Control / WAF | Automated 403 Forbidden bypass testing using Jason Haddix's methodology | `/403Bypass`, `bypass403.sh`, `bypass403-batch.sh` |
-| [`ApexDiscovery`](Awesome-Claude-Code-Agent-Skills/ApexDiscovery/) | Reconnaissance | Root and apex domain discovery across acquisitions, subsidiaries & reverse WHOIS | `/ApexDiscovery`, `apex-discover.sh`, `tenn.sh` |
-| [`AsnRecon`](Awesome-Claude-Code-Agent-Skills/AsnRecon/) | Network Footprinting | ASN and owned IPv4 range reconnaissance using `bgp.he.net` | `/AsnRecon`, `FindAsn.md`, `FindIpRanges.md` |
-| [`bac-analyzer`](Awesome-Claude-Code-Agent-Skills/bac-analyzer/) | Broken Access Control | Passive HTTP traffic analysis (HAR, Caido, Burp XML) for IDOR & BAC flaws | `analyze traffic`, `check for IDOR`, Python analyzers |
-| [`BugBountyWorkflow`](Awesome-Claude-Code-Agent-Skills/BugBountyWorkflow/) | Workflow & Reporting | End-to-end bug bounty hunting workflows, report drafting, and CVSS scoring | `/BugBountyWorkflow`, HackerOne & Bugcrowd templates |
-| [`CacheDeception`](Awesome-Claude-Code-Agent-Skills/CacheDeception/) | Web Cache Attacks | Web cache deception and cache poisoning exploitation | `/CacheDeception`, path confusion, delimiter vectors |
-| [`crawl`](Awesome-Claude-Code-Agent-Skills/crawl/) | Web Crawling & Mapping | Unified Python wrapper for deep web crawling with `hakrawler` and `gospider` | `/crawl`, `scripts/crawl.py` |
-| [`jsa`](Awesome-Claude-Code-Agent-Skills/jsa/) | JavaScript Security | Automated JavaScript analysis for endpoints, secrets & XSS sinks via Chrome DevTools | `/jsa <domain>`, Chrome DevTools MCP |
-| [`JsAnalyzer`](Awesome-Claude-Code-Agent-Skills/JsAnalyzer/) | Static JS Auditing | Orchestrator-based static JS file auditing (sinks, routes, postMessage, secrets) | `/JsAnalyzer`, TypeScript orchestrators |
-| [`osint-enrich`](Awesome-Claude-Code-Agent-Skills/osint-enrich/) | OSINT Intelligence | Open-source intelligence dossier generation on individuals and organizations | `osint-enrich <target>`, markdown report generator |
-| [`pulse-template`](Awesome-Claude-Code-Agent-Skills/pulse-template/) | Threat & Tech Intel | Resilient 5-tier multi-source daily news digest (X, RSS, Reddit, arXiv, YouTube) | `fetch_pulse.py`, automated HTML email digests |
-| [`SubdomainEnum`](Awesome-Claude-Code-Agent-Skills/SubdomainEnum/) | Attack Surface Mapping | Subdomain enumeration with Light & Full workflows plus intelligent prioritization | `/SubdomainEnum`, `PrioritizeTargets.ts`, `QuickRecon.ts` |
-| [`TabletopExercise`](Awesome-Claude-Code-Agent-Skills/TabletopExercise/) | Incident Readiness | Cybersecurity tabletop exercise design, CISA-aligned scenario generator & PDF export | `/TabletopExercise`, standalone HTML/PDF generator |
+| Domain | Skills Count | Focus Highlights |
+| :--- | :--- | :--- |
+| **🎯 Reconnaissance, Footprinting & OSINT** | **14 Skills** | Apex & root domain discovery, BGP/ASN mapping, Subdomain enumeration & takeover, PCAP analysis |
+| **🌐 Web Application Exploitation & Injections** | **31 Skills** | SQLi, SSRF, SSTI, XSS, XXE, Command injection, Cache deception, Request smuggling, Race conditions |
+| **🔑 Authentication, Authorization & Access Control** | **14 Skills** | 401/403 bypasses, BAC/IDOR, JWT & OAuth flaws, SAML SSO, business logic flaws |
+| **🏢 Active Directory & Windows Exploitation** | **7 Skills** | AD ACL abuse, AD CS, Kerberos ticket attacks, NTLM relay coercion, AV evasion, lateral movement |
+| **🐧 Linux, Containers & Cloud Security** | **6 Skills** | Container breakout, Kubernetes auditing, Linux privilege escalation & lateral movement, tunneling |
+| **⚡ Binary Exploitation, Reverse Engineering & macOS** | **16 Skills** | Heap exploitation, format strings, kernel flaws, V8 engine, symbolic execution, macOS injection |
+| **📱 Mobile & Smart Contract Security** | **5 Skills** | Android/iOS pentesting tricks, SSL pinning bypass, Smart contract & DeFi exploit patterns |
+| **🔐 Cryptography & Cryptanalysis** | **6 Skills** | Classical ciphers, Hash cracking, Lattice attacks, RSA attacks, Steganography, Symmetric ciphers |
+| **🧠 AI / LLM Security & Agent Orchestration** | **7 Skills** | Prompt injection, AI/ML security, Multi-agent orchestrators (`skillabc`, `hack`, `mcp-builder`) |
+| **🛡️ DevSecOps, Defense & Workflow Automation** | **12 Skills** | Tabletop exercises, Bug bounty workflows, Code auditing, Dependency confusion, WAF bypasses |
+
+<details>
+<summary><b>🔍 Expand Full Directory of 118 Awesome Skills (Click to View Complete Table)</b></summary>
+
+### Category Breakdown of Awesome Skills (118 Skills)
+
+#### 🎯 Reconnaissance, Footprinting & OSINT (14 Skills)
+
+| Skill Directory | Description |
+| :--- | :--- |
+| [`ApexDiscovery`](Awesome-Claude-Code-Agent-Skills/ApexDiscovery/) | Comprehensive apex/root domain discovery using multiple techniques. USE WHEN user mentions find related domains, apex domains, root ... |
+| [`AsnRecon`](Awesome-Claude-Code-Agent-Skills/AsnRecon/) | ASN and IPv4 range reconnaissance using bgp.he.net. USE WHEN user mentions ASN lookup, find IP ranges, company IP space, BGP reconna... |
+| [`JsAnalyzer`](Awesome-Claude-Code-Agent-Skills/JsAnalyzer/) | Static analysis for JavaScript files targeting security vulnerabilities. USE WHEN user says 'analyze js', 'scan javascript', 'find s... |
+| [`SubdomainEnum`](Awesome-Claude-Code-Agent-Skills/SubdomainEnum/) | Subdomain enumeration with Light and Full workflows, plus intelligent target prioritization. USE WHEN user mentions subdomain enumer... |
+| [`api-recon-and-docs`](Awesome-Claude-Code-Agent-Skills/api-recon-and-docs/) | API reconnaissance and documentation review playbook. Use when discovering endpoints, schemas, versions, OpenAPI specs, hidden docs,... |
+| [`crawl`](Awesome-Claude-Code-Agent-Skills/crawl/) | Deep web crawling using hakrawler and gospider for subdomain discovery, endpoint extraction, and JavaScript analysis. Use this skill... |
+| [`jsa`](Awesome-Claude-Code-Agent-Skills/jsa/) | Specialized offensive security skill. |
+| [`network-protocol-attacks`](Awesome-Claude-Code-Agent-Skills/network-protocol-attacks/) | Network protocol attack playbook. Use when exploiting layer 2/3 protocols including ARP spoofing, LLMNR/NBT-NS/mDNS poisoning, WPAD ... |
+| [`osint-enrich`](Awesome-Claude-Code-Agent-Skills/osint-enrich/) | Specialized offensive security skill. |
+| [`pulse-template`](Awesome-Claude-Code-Agent-Skills/pulse-template/) | Specialized offensive security skill. |
+| [`recon-and-methodology`](Awesome-Claude-Code-Agent-Skills/recon-and-methodology/) | Reconnaissance and methodology playbook. Use when mapping assets, discovering endpoints, fingerprinting technology, and building a s... |
+| [`recon-for-sec`](Awesome-Claude-Code-Agent-Skills/recon-for-sec/) | Entry P1 category router for reconnaissance and methodology. Use when mapping scope, discovering assets, fingerprinting technology, ... |
+| [`subdomain-takeover`](Awesome-Claude-Code-Agent-Skills/subdomain-takeover/) | Subdomain takeover detection and exploitation playbook. Use when targets have dangling CNAME/NS/MX records pointing to deprovisioned... |
+| [`traffic-analysis-pcap`](Awesome-Claude-Code-Agent-Skills/traffic-analysis-pcap/) | Traffic analysis and PCAP forensics playbook. Use when analyzing network captures including Wireshark filters, protocol analysis (HT... |
+
+#### 🌐 Web Application Exploitation & Injections (31 Skills)
+
+| Skill Directory | Description |
+| :--- | :--- |
+| [`CacheDeception`](Awesome-Claude-Code-Agent-Skills/CacheDeception/) | Web cache deception and poisoning exploitation. USE WHEN user mentions cache deception, cache poisoning, CDN bypass, URL parsing dis... |
+| [`clickjacking`](Awesome-Claude-Code-Agent-Skills/clickjacking/) | Clickjacking playbook. Use when testing whether target pages can be framed, whether X-Frame-Options or CSP frame-ancestors are prope... |
+| [`cmdi-command-injection`](Awesome-Claude-Code-Agent-Skills/cmdi-command-injection/) | Command injection playbook. Use when user input may reach shell commands, process execution, converters, import pipelines, or blind ... |
+| [`cors-cross-origin-misconfiguration`](Awesome-Claude-Code-Agent-Skills/cors-cross-origin-misconfiguration/) | CORS misconfiguration testing playbook. Use when analyzing cross-origin trust, credentialed browser reads, origin reflection, prefli... |
+| [`crlf-injection`](Awesome-Claude-Code-Agent-Skills/crlf-injection/) | CRLF injection playbook. Use when user input reaches HTTP response headers, Location redirects, Set-Cookie values, or log files wher... |
+| [`csrf-cross-site-request-forgery`](Awesome-Claude-Code-Agent-Skills/csrf-cross-site-request-forgery/) | CSRF testing playbook. Use when reviewing state-changing web flows, anti-CSRF defenses, SameSite behavior, JSON CSRF, login CSRF, an... |
+| [`csv-formula-injection`](Awesome-Claude-Code-Agent-Skills/csv-formula-injection/) | CSV/spreadsheet formula injection (DDE, Excel/LibreOffice, Google Sheets IMPORT*). Use when exports, imports, or user fields feed sp... |
+| [`dangling-markup-injection`](Awesome-Claude-Code-Agent-Skills/dangling-markup-injection/) | Dangling markup injection playbook. Use when HTML injection is possible but JavaScript execution is blocked (CSP, sanitizer strips e... |
+| [`email-header-injection`](Awesome-Claude-Code-Agent-Skills/email-header-injection/) | Email header injection and spoofing playbook. Use when testing contact forms, email APIs, password reset flows, or any feature that ... |
+| [`expression-language-injection`](Awesome-Claude-Code-Agent-Skills/expression-language-injection/) | Expression Language injection playbook. Use when Java EL, SpEL, OGNL, or MVEL expressions may evaluate attacker-controlled input in ... |
+| [`file-access-vuln`](Awesome-Claude-Code-Agent-Skills/file-access-vuln/) | Entry P1 category router for file access and upload workflows. Use when testing download endpoints, file paths, local file inclusion... |
+| [`http-host-header-attacks`](Awesome-Claude-Code-Agent-Skills/http-host-header-attacks/) | HTTP Host header injection and routing abuse playbook. Use when the application trusts the Host header for generating URLs, routing ... |
+| [`http-parameter-pollution`](Awesome-Claude-Code-Agent-Skills/http-parameter-pollution/) | HTTP Parameter Pollution (HPP): duplicate query/body keys parsed differently by servers, proxies, WAFs, and app frameworks. Use when... |
+| [`http2-specific-attacks`](Awesome-Claude-Code-Agent-Skills/http2-specific-attacks/) | HTTP/2 protocol-specific attack playbook. Use when the target supports HTTP/2 and you need to exploit binary framing, HPACK compress... |
+| [`injection-checking`](Awesome-Claude-Code-Agent-Skills/injection-checking/) | Entry P1 category router for injection testing. Use when routing between XSS, SQLi, SSRF, XXE, SSTI, command injection, and NoSQL in... |
+| [`jndi-injection`](Awesome-Claude-Code-Agent-Skills/jndi-injection/) | JNDI injection playbook. Use when Java applications perform JNDI lookups with attacker-controlled names, especially via Log4j2, Spri... |
+| [`open-redirect`](Awesome-Claude-Code-Agent-Skills/open-redirect/) | Open redirect playbook. Use when URL parameters, form actions, or JavaScript sinks control navigation targets and may redirect users... |
+| [`path-traversal-lfi`](Awesome-Claude-Code-Agent-Skills/path-traversal-lfi/) | Path traversal and LFI playbook. Use when file paths, download endpoints, include operations, archive extraction, or wrapper behavio... |
+| [`prototype-pollution`](Awesome-Claude-Code-Agent-Skills/prototype-pollution/) | Prototype pollution testing for JavaScript stacks. Use when user input is merged into objects (query parsers, JSON bodies, deep assi... |
+| [`prototype-pollution-advanced`](Awesome-Claude-Code-Agent-Skills/prototype-pollution-advanced/) | Advanced prototype pollution playbook — server-side RCE, client-side gadgets, filter bypasses, and detection techniques. Companion t... |
+| [`race-condition`](Awesome-Claude-Code-Agent-Skills/race-condition/) | Race condition and TOCTOU testing for web apps. Use when testing one-time operations, concurrent HTTP abuse, rate-limit bypass, Turb... |
+| [`request-smuggling`](Awesome-Claude-Code-Agent-Skills/request-smuggling/) | HTTP request smuggling and desynchronization testing. Use when front proxies, CDNs, or load balancers disagree with the origin on me... |
+| [`sqli-sql-injection`](Awesome-Claude-Code-Agent-Skills/sqli-sql-injection/) | SQL injection playbook. Use when input reaches SQL queries, authentication logic, sorting, filtering, reporting, or DB-specific blin... |
+| [`ssrf-server-side-request-forgery`](Awesome-Claude-Code-Agent-Skills/ssrf-server-side-request-forgery/) | SSRF playbook. Use when the server fetches URLs, resolves hostnames, imports remote content, or can be driven toward internal networ... |
+| [`ssti-server-side-template-injection`](Awesome-Claude-Code-Agent-Skills/ssti-server-side-template-injection/) | SSTI playbook. Use when template expressions, server-side rendering, preview features, or templating engines may evaluate attacker-c... |
+| [`type-juggling`](Awesome-Claude-Code-Agent-Skills/type-juggling/) | PHP type juggling and weak comparison (`==`) bypass. Use when authentication, HMAC/signature checks, or token validation uses loose ... |
+| [`web-cache-deception`](Awesome-Claude-Code-Agent-Skills/web-cache-deception/) | Web cache deception and poisoning playbook. Use when CDN, reverse proxy, or application caching may serve sensitive authenticated co... |
+| [`websocket-security`](Awesome-Claude-Code-Agent-Skills/websocket-security/) | WebSocket handshake, CSWSH, tooling (wsrepl, ws-harness, Burp), and common flaws. Use when apps use real-time channels, chat, notifi... |
+| [`xslt-injection`](Awesome-Claude-Code-Agent-Skills/xslt-injection/) | XSLT injection testing: processor fingerprinting, XXE and document() SSRF, EXSLT write primitives, PHP/Java/.NET extension RCE surfa... |
+| [`xss-cross-site-scripting`](Awesome-Claude-Code-Agent-Skills/xss-cross-site-scripting/) | XSS playbook. Use when user-controlled content reaches HTML, attributes, JavaScript, DOM sinks, uploads, or multi-context rendering ... |
+| [`xxe-xml-external-entity`](Awesome-Claude-Code-Agent-Skills/xxe-xml-external-entity/) | XXE playbook. Use when XML, SVG, OOXML, SOAP, or parser-driven imports may resolve external entities, files, or internal network res... |
+
+#### 🔑 Authentication, Authorization & Access Control (14 Skills)
+
+| Skill Directory | Description |
+| :--- | :--- |
+| [`401-403-bypass-techniques`](Awesome-Claude-Code-Agent-Skills/401-403-bypass-techniques/) | 401/403 bypass playbook. Use when encountering access-denied responses on admin panels, API endpoints, or restricted paths. Covers p... |
+| [`403Bypass`](Awesome-Claude-Code-Agent-Skills/403Bypass/) | Automated 403 Forbidden bypass testing using Jason Haddix's techniques. USE WHEN you encounter 403 responses during recon, content d... |
+| [`api-auth-and-jwt-abuse`](Awesome-Claude-Code-Agent-Skills/api-auth-and-jwt-abuse/) | API authentication and JWT abuse playbook. Use when testing bearer tokens, API keys, claim trust, header spoofing, rate limits, and ... |
+| [`api-authorization-and-bola`](Awesome-Claude-Code-Agent-Skills/api-authorization-and-bola/) | API authorization and BOLA testing playbook. Use when APIs expose object identifiers, nested resources, hidden writable fields, or w... |
+| [`api-sec`](Awesome-Claude-Code-Agent-Skills/api-sec/) | Entry P1 category router for API security. Use when choosing between API recon, authorization, token abuse, and hidden-parameter wor... |
+| [`auth-sec`](Awesome-Claude-Code-Agent-Skills/auth-sec/) | Entry P1 category router for authentication and authorization. Use when testing login flows, sessions, object authorization, JWT, OA... |
+| [`authbypass-authentication-flaws`](Awesome-Claude-Code-Agent-Skills/authbypass-authentication-flaws/) | Authentication bypass testing playbook. Use when assessing login flows, password reset logic, account recovery, MFA bypass, token pr... |
+| [`bac-analyzer`](Awesome-Claude-Code-Agent-Skills/bac-analyzer/) | Passive traffic analyzer that examines captured HTTP traffic (HAR, Caido JSON, Burp XML) to identify potential Broken Access Control... |
+| [`business-logic-vuln`](Awesome-Claude-Code-Agent-Skills/business-logic-vuln/) | Entry P1 category router for business logic testing. Use when workflow abuse, race conditions, pricing flaws, or multi-step state at... |
+| [`business-logic-vulnerabilities`](Awesome-Claude-Code-Agent-Skills/business-logic-vulnerabilities/) | Business logic vulnerability playbook. Use when reasoning about workflows, race conditions, price manipulation, coupon abuse, state ... |
+| [`idor-broken-object-authorization`](Awesome-Claude-Code-Agent-Skills/idor-broken-object-authorization/) | IDOR and broken object authorization testing playbook. Use when requests expose object identifiers, tenant boundaries, writable fiel... |
+| [`jwt-oauth-token-attacks`](Awesome-Claude-Code-Agent-Skills/jwt-oauth-token-attacks/) | JWT and OAuth token attack playbook. Use when validating token trust, signing algorithms, key handling, claim abuse, bearer flows, a... |
+| [`oauth-oidc-misconfiguration`](Awesome-Claude-Code-Agent-Skills/oauth-oidc-misconfiguration/) | OAuth and OIDC misconfiguration testing playbook. Use when reviewing redirect URI handling, state and nonce validation, PKCE, token ... |
+| [`saml-sso-assertion-attacks`](Awesome-Claude-Code-Agent-Skills/saml-sso-assertion-attacks/) | SAML SSO assertion attack playbook. Use when testing signature validation, assertion wrapping, audience restrictions, ACS handling, ... |
+
+#### 🏢 Active Directory & Windows Exploitation (7 Skills)
+
+| Skill Directory | Description |
+| :--- | :--- |
+| [`active-directory-acl-abuse`](Awesome-Claude-Code-Agent-Skills/active-directory-acl-abuse/) | Active Directory ACL abuse playbook. Use when exploiting misconfigured AD permissions including GenericAll, WriteDACL, DCSync rights... |
+| [`active-directory-certificate-services`](Awesome-Claude-Code-Agent-Skills/active-directory-certificate-services/) | AD Certificate Services attack playbook. Use when targeting misconfigured AD CS for privilege escalation via ESC1-ESC13 template abu... |
+| [`active-directory-kerberos-attacks`](Awesome-Claude-Code-Agent-Skills/active-directory-kerberos-attacks/) | Kerberos attack playbook for Active Directory. Use when targeting AD authentication via AS-REP roasting, Kerberoasting, golden/silve... |
+| [`ntlm-relay-coercion`](Awesome-Claude-Code-Agent-Skills/ntlm-relay-coercion/) | NTLM relay and authentication coercion playbook. Use when capturing and relaying NTLM authentication to escalate privileges via SMB,... |
+| [`windows-av-evasion`](Awesome-Claude-Code-Agent-Skills/windows-av-evasion/) | AV/EDR evasion playbook for Windows. Use when bypassing AMSI, ETW, .NET assembly detection, shellcode execution, process injection, ... |
+| [`windows-lateral-movement`](Awesome-Claude-Code-Agent-Skills/windows-lateral-movement/) | Windows lateral movement playbook. Use when pivoting between Windows hosts via PsExec, WMI, WinRM, DCOM, RDP, pass-the-hash, overpas... |
+| [`windows-privilege-escalation`](Awesome-Claude-Code-Agent-Skills/windows-privilege-escalation/) | Windows local privilege escalation playbook. Use when you have low-privilege shell access on Windows and need to escalate via token ... |
+
+#### 🐧 Linux, Containers & Cloud Security (6 Skills)
+
+| Skill Directory | Description |
+| :--- | :--- |
+| [`container-escape-techniques`](Awesome-Claude-Code-Agent-Skills/container-escape-techniques/) | Container escape playbook. Use when operating inside a Docker container, LXC, or Kubernetes pod and need to escape to the host via p... |
+| [`kubernetes-pentesting`](Awesome-Claude-Code-Agent-Skills/kubernetes-pentesting/) | Kubernetes penetration testing playbook. Use when targeting Kubernetes clusters via API server, RBAC enumeration, service account ab... |
+| [`linux-lateral-movement`](Awesome-Claude-Code-Agent-Skills/linux-lateral-movement/) | Linux lateral movement playbook. Use after gaining initial access to pivot across Linux hosts via SSH hijacking, credential harvesti... |
+| [`linux-privilege-escalation`](Awesome-Claude-Code-Agent-Skills/linux-privilege-escalation/) | Linux privilege escalation playbook. Use when you have low-privilege shell access and need to escalate to root via SUID/SGID binarie... |
+| [`linux-security-bypass`](Awesome-Claude-Code-Agent-Skills/linux-security-bypass/) | Linux security mechanism bypass playbook. Use when facing restricted bash/rbash, read-only or noexec filesystems, AppArmor, SELinux,... |
+| [`tunneling-and-pivoting`](Awesome-Claude-Code-Agent-Skills/tunneling-and-pivoting/) | Tunneling and pivoting playbook. Use when establishing network tunnels through compromised hosts including SSH tunneling, Chisel, Li... |
+
+#### ⚡ Binary Exploitation, Reverse Engineering & macOS (16 Skills)
+
+| Skill Directory | Description |
+| :--- | :--- |
+| [`anti-debugging-techniques`](Awesome-Claude-Code-Agent-Skills/anti-debugging-techniques/) | Anti-debugging detection and bypass playbook. Use when reversing protected binaries that detect debuggers via ptrace, PEB flags, tim... |
+| [`arbitrary-write-to-rce`](Awesome-Claude-Code-Agent-Skills/arbitrary-write-to-rce/) | Arbitrary write to RCE playbook. Use when you have an arbitrary write primitive (from heap exploitation, format string, or OOB write... |
+| [`binary-protection-bypass`](Awesome-Claude-Code-Agent-Skills/binary-protection-bypass/) | Binary protection bypass playbook. Use when identifying and bypassing ASLR, PIE, NX/DEP, stack canary, RELRO, FORTIFY_SOURCE, CET, a... |
+| [`browser-exploitation-v8`](Awesome-Claude-Code-Agent-Skills/browser-exploitation-v8/) | Browser and V8 exploitation playbook. Use when exploiting JavaScript engine vulnerabilities including JIT type confusion, incorrect ... |
+| [`code-obfuscation-deobfuscation`](Awesome-Claude-Code-Agent-Skills/code-obfuscation-deobfuscation/) | Code obfuscation analysis and deobfuscation playbook. Use when reversing binaries protected by junk code, opaque predicates, self-mo... |
+| [`format-string-exploitation`](Awesome-Claude-Code-Agent-Skills/format-string-exploitation/) | Format string exploitation playbook. Use when printf-family functions receive user-controlled format strings, enabling arbitrary sta... |
+| [`ghost-bits-cast-attack`](Awesome-Claude-Code-Agent-Skills/ghost-bits-cast-attack/) | Java "Ghost Bits" / Cast Attack playbook (Black Hat Asia 2026). Use when attacking Java services where 16-bit char is silently narro... |
+| [`heap-exploitation`](Awesome-Claude-Code-Agent-Skills/heap-exploitation/) | Heap exploitation playbook. Use when targeting ptmalloc2/glibc heap vulnerabilities including UAF, double free, overflow, off-by-one... |
+| [`kernel-exploitation`](Awesome-Claude-Code-Agent-Skills/kernel-exploitation/) | Linux kernel exploitation playbook. Use when exploiting kernel vulnerabilities (UAF, OOB, race condition, type confusion) for privil... |
+| [`macos-process-injection`](Awesome-Claude-Code-Agent-Skills/macos-process-injection/) | macOS process injection playbook. Use when you need to inject code into running or launching macOS processes via dylib hijacking, DY... |
+| [`macos-security-bypass`](Awesome-Claude-Code-Agent-Skills/macos-security-bypass/) | macOS security bypass playbook. Use when targeting macOS endpoints and need to bypass TCC, Gatekeeper, SIP, sandbox, code signing, o... |
+| [`memory-forensics-volatility`](Awesome-Claude-Code-Agent-Skills/memory-forensics-volatility/) | Memory forensics playbook using Volatility 2/3. Use when analyzing memory dumps for malware analysis, credential extraction, process... |
+| [`sandbox-escape-techniques`](Awesome-Claude-Code-Agent-Skills/sandbox-escape-techniques/) | Sandbox escape playbook. Use when breaking out of Python sandbox, Lua sandbox, seccomp filter, chroot jail, container/Docker, browse... |
+| [`stack-overflow-and-rop`](Awesome-Claude-Code-Agent-Skills/stack-overflow-and-rop/) | Stack overflow and ROP playbook. Use when exploiting buffer overflows to hijack control flow via return address overwrite, ROP chain... |
+| [`symbolic-execution-tools`](Awesome-Claude-Code-Agent-Skills/symbolic-execution-tools/) | Symbolic execution and constraint solving playbook. Use when solving CTF reversing challenges, recovering keys, bypassing checks, or... |
+| [`vm-and-bytecode-reverse`](Awesome-Claude-Code-Agent-Skills/vm-and-bytecode-reverse/) | Custom VM and bytecode reverse engineering playbook. Use when CTF challenges or protected software implement custom virtual machines... |
+
+#### 📱 Mobile & Smart Contract Security (5 Skills)
+
+| Skill Directory | Description |
+| :--- | :--- |
+| [`android-pentesting-tricks`](Awesome-Claude-Code-Agent-Skills/android-pentesting-tricks/) | Android pentesting playbook. Use when testing Android applications for SSL pinning bypass, exported component abuse, WebView vulnera... |
+| [`defi-attack-patterns`](Awesome-Claude-Code-Agent-Skills/defi-attack-patterns/) | DeFi attack pattern playbook. Use when analyzing flash loan attacks, price oracle manipulation, MEV sandwich attacks, governance exp... |
+| [`ios-pentesting-tricks`](Awesome-Claude-Code-Agent-Skills/ios-pentesting-tricks/) | iOS pentesting playbook. Use when testing iOS applications for keychain extraction, URL scheme hijacking, Universal Links exploitati... |
+| [`mobile-ssl-pinning-bypass`](Awesome-Claude-Code-Agent-Skills/mobile-ssl-pinning-bypass/) | Mobile SSL pinning bypass playbook. Use when intercepting HTTPS traffic from mobile applications that implement certificate pinning,... |
+| [`smart-contract-vulnerabilities`](Awesome-Claude-Code-Agent-Skills/smart-contract-vulnerabilities/) | Smart contract vulnerability playbook. Use when auditing Solidity/EVM contracts for reentrancy, integer overflow, access control, de... |
+
+#### 🔐 Cryptography & Cryptanalysis (6 Skills)
+
+| Skill Directory | Description |
+| :--- | :--- |
+| [`classical-cipher-analysis`](Awesome-Claude-Code-Agent-Skills/classical-cipher-analysis/) | Classical cipher analysis playbook. Use when encountering substitution ciphers, Vigenere, transposition, XOR, or encoded text in CTF... |
+| [`hash-attack-techniques`](Awesome-Claude-Code-Agent-Skills/hash-attack-techniques/) | Hash attack playbook. Use when exploiting length extension, MD5/SHA1 collisions, HMAC timing leaks, birthday attacks, or hash-based ... |
+| [`lattice-crypto-attacks`](Awesome-Claude-Code-Agent-Skills/lattice-crypto-attacks/) | Lattice-based cryptanalysis playbook. Use when attacking RSA via Coppersmith small roots, recovering DSA/ECDSA nonces from bias, sol... |
+| [`rsa-attack-techniques`](Awesome-Claude-Code-Agent-Skills/rsa-attack-techniques/) | RSA attack playbook for CTF and real-world cryptanalysis. Use when given RSA parameters (n, e, c) and need to recover plaintext by e... |
+| [`steganography-techniques`](Awesome-Claude-Code-Agent-Skills/steganography-techniques/) | Steganography detection and extraction playbook. Use when analyzing images (LSB, PNG chunks, JPEG DCT, EXIF), audio (spectrogram, DT... |
+| [`symmetric-cipher-attacks`](Awesome-Claude-Code-Agent-Skills/symmetric-cipher-attacks/) | Symmetric cipher attack playbook. Use when exploiting block cipher mode weaknesses (CBC padding oracle, ECB cut-and-paste, bit flipp... |
+
+#### 🧠 AI / LLM Security & Agent Orchestration (7 Skills)
+
+| Skill Directory | Description |
+| :--- | :--- |
+| [`ai-ml-security`](Awesome-Claude-Code-Agent-Skills/ai-ml-security/) | AI/ML security playbook. Use when assessing model supply chain attacks (pickle RCE, poisoned weights), adversarial examples, model p... |
+| [`artifacts-builder`](Awesome-Claude-Code-Agent-Skills/artifacts-builder/) | Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailw... |
+| [`hack`](Awesome-Claude-Code-Agent-Skills/hack/) | Entry P0 primary router for HackSkills. Use when the task involves web application testing, API security assessment, recon, vulnerab... |
+| [`llm-prompt-injection`](Awesome-Claude-Code-Agent-Skills/llm-prompt-injection/) | LLM prompt injection playbook. Use when testing AI/LLM applications for direct injection, indirect injection via RAG/browsing, tool ... |
+| [`mcp-builder`](Awesome-Claude-Code-Agent-Skills/mcp-builder/) | Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through wel... |
+| [`skill-creator`](Awesome-Claude-Code-Agent-Skills/skill-creator/) | Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) t... |
+| [`skillabc`](Awesome-Claude-Code-Agent-Skills/skillabc/) | Intelligent orchestration layer that analyzes requests, selects the most relevant OpenCode skills, combines workflows intelligently,... |
+
+#### 🛡️ DevSecOps, Defense & Workflow Automation (12 Skills)
+
+| Skill Directory | Description |
+| :--- | :--- |
+| [`BugBountyWorkflow`](Awesome-Claude-Code-Agent-Skills/BugBountyWorkflow/) | Bug bounty hunting workflow and report writing expertise. USE WHEN user mentions bug bounty, vulnerability report, HackerOne, Bugcro... |
+| [`TabletopExercise`](Awesome-Claude-Code-Agent-Skills/TabletopExercise/) | Comprehensive cybersecurity tabletop exercise design and facilitation framework. USE WHEN designing incident response scenarios, cre... |
+| [`code-security-auditor`](Awesome-Claude-Code-Agent-Skills/code-security-auditor/) | Perform pre-execution security audits of untrusted codebases through static analysis. Use when analyzing a codebase for potential ma... |
+| [`csp-bypass-advanced`](Awesome-Claude-Code-Agent-Skills/csp-bypass-advanced/) | Advanced Content Security Policy bypass techniques. Use when XSS or data exfiltration is blocked by CSP and you need to find policy ... |
+| [`dependency-confusion`](Awesome-Claude-Code-Agent-Skills/dependency-confusion/) | Supply-chain testing via package-manager dependency confusion: when internal package names resolve to attacker-controlled public reg... |
+| [`deserialization-insecure`](Awesome-Claude-Code-Agent-Skills/deserialization-insecure/) | Insecure deserialization playbook. Use when Java, PHP, or Python applications deserialize untrusted data via ObjectInputStream, unse... |
+| [`dns-rebinding-attacks`](Awesome-Claude-Code-Agent-Skills/dns-rebinding-attacks/) | DNS rebinding attack playbook. Use when testing applications that trust DNS resolution for origin checks, interact with internal ser... |
+| [`graphql-and-hidden-parameters`](Awesome-Claude-Code-Agent-Skills/graphql-and-hidden-parameters/) | GraphQL and hidden parameter testing playbook. Use when exploring introspection, batching, undocumented fields, hidden parameters, s... |
+| [`insecure-source-code-management`](Awesome-Claude-Code-Agent-Skills/insecure-source-code-management/) | Source control and artifact exposure (.git, .svn, .hg, backups, .env). Use when recon finds VCS paths, 403 on hidden dirs, or backup... |
+| [`java-backend-architect`](Awesome-Claude-Code-Agent-Skills/java-backend-architect/) | Comprehensive skill for designing and building scalable Spring Boot backend systems with clean architecture, JWT auth, MySQL, REST A... |
+| [`waf-bypass-techniques`](Awesome-Claude-Code-Agent-Skills/waf-bypass-techniques/) | WAF bypass methodology and generic evasion techniques. Use when a web application firewall blocks injection payloads (SQLi, XSS, RCE... |
+| [`webapp-testing`](Awesome-Claude-Code-Agent-Skills/webapp-testing/) | Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debuggi... |
+
+
+</details>
 
 ---
 
@@ -102,26 +275,23 @@ Custom, deep vulnerability analysis skills derived directly from real-world Hack
 ├── hackerone_public.py                    # HackerOne API Hacktivity downloader (Python stdlib)
 ├── hackerone_public_reports.json          # Offline dataset (9,950 disclosed reports)
 │
-├── Awesome-Claude-Code-Agent-Skills/      # 🌟 Open-Source Curated Security Skills (13 Skills)
-│   ├── 403Bypass/                         # 403 Forbidden bypass automation
-│   ├── ApexDiscovery/                     # Root & apex domain discovery
-│   ├── AsnRecon/                          # BGP ASN & IPv4 range reconnaissance
-│   ├── bac-analyzer/                      # Passive traffic BAC & IDOR analysis
-│   ├── BugBountyWorkflow/                 # Bug hunting workflow & reporting
-│   ├── CacheDeception/                    # Web cache deception exploitation
-│   ├── crawl/                             # Deep web crawling (hakrawler + gospider)
-│   ├── jsa/                               # DevTools JavaScript security analysis
-│   ├── JsAnalyzer/                        # Static JS vulnerability auditing
-│   ├── osint-enrich/                      # OSINT target intelligence dossiers
-│   ├── pulse-template/                    # Daily threat & technology digest
-│   ├── SubdomainEnum/                     # Subdomain enumeration & prioritization
-│   └── TabletopExercise/                  # Incident response tabletop scenarios
+├── Awesome-Claude-Code-Agent-Skills/      # 🌟 Curated Security Skills (118 Skills across 10 Domains)
+│   ├── Reconnaissance & OSINT (14)        # ApexDiscovery, AsnRecon, SubdomainEnum, crawl, jsa...
+│   ├── Web Exploitation & Injections (31) # SQLi, SSRF, SSTI, XSS, XXE, CMDi, CacheDeception...
+│   ├── Auth & Access Control (14)         # 401/403 bypass, BOLA/IDOR, JWT/OAuth, SAML...
+│   ├── Active Directory & Windows (7)     # AD CS, Kerberos, NTLM relay, PrivEsc, AV evasion...
+│   ├── Linux, Containers & Cloud (6)      # Kubernetes, container escapes, Linux PrivEsc...
+│   ├── Binary & Reverse Engineering (16)  # Heap, format strings, kernel, V8, macOS injection...
+│   ├── Mobile & Smart Contracts (5)       # Android/iOS pentesting, SSL pinning, DeFi...
+│   ├── Cryptography & Ciphers (6)         # RSA, Lattice, Hash attacks, Steganography...
+│   ├── AI Security & Orchestration (7)    # Prompt injection, AI/ML security, skillabc, hack...
+│   └── DevSecOps & Tabletop (12)          # TabletopExercise, BugBountyWorkflow, Code auditor...
 │
-└── Personal-Claude-Code-Agent-Skills/     # 🛡️ HackerOne Intelligence Skills (Custom)
+└── Personal-Claude-Code-Agent-Skills/     # 🛡️ HackerOne Intelligence Skills (Custom Reports)
     ├── Note.md                            # Master ledger of converted HackerOne report IDs
-    ├── otp-bruteforce-testing/            # OTP Brute-Force & Oracle Testing Skill
-    ├── stack-bounds-format-auditing/      # Stack Buffer Overflow & Bounds Auditing
-    └── url-parser-confusion-testing/      # URL Parser Inconsistencies & SSRF Bypass
+    ├── otp-bruteforce-testing/            # OTP Brute-Force & Oracle Testing (H1 #3265780)
+    ├── stack-bounds-format-auditing/      # Stack Buffer Overflow & Bounds Auditing (H1 #2551512)
+    └── url-parser-confusion-testing/      # URL Parser Inconsistencies & SSRF Bypass (H1 #3923212)
 ```
 
 ---
